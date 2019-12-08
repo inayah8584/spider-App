@@ -1,0 +1,45 @@
+<nb-layout-header class="header">
+    <h5>Welcome to User's ToDo page !</h5>
+</nb-layout-header>
+
+<div *ngIf="todo.id<6">
+    <table class="table">
+        <thead style="background-color:rgb(103, 126, 112)">
+            <tr>
+                <th scope="col">ToDo Post Id</th>
+                <th scope="col">ToDo user Id</th>
+                <th scope="col">ToDo Title</th>
+                <th scope="col">Task Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">{{ todo.id }}</th>
+                <td>{{ todo.userId }}</td>
+                <td>{{ todo.title }}</td>
+                <td>{{ todo.completed }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h1> Details for Top 5 Todos.</h1>
+<div>
+    <table class="table">
+        <thead style="background-color:rgb(103, 126, 112)">
+            <tr>
+                <th scope="col">ToDo Post Id</th>
+                <th scope="col">ToDo user Id</th>
+                <th scope="col">ToDo Title</th>
+                <th scope="col">Task Status</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let t of todo">
+            <tr>
+                <th scope="row">{{ t.id }}</th>
+                <td>{{ t.userId }}</td>
+                <td>{{ t.title }}</td>
+                <td>{{ t.completed }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
